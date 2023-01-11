@@ -30,7 +30,7 @@ def cadastro(request):
             return render(request, 'cadastro.html')
 
         try:    
-            user = User.objects.create_user(
+            users = User.objects.create_user(
                 username=nome,
                 email=email,
                 password=senha,
@@ -61,5 +61,5 @@ def logar(request):
 
 def sair(request):
     logout(request)
-    return redirect('/auth/login')
+    return redirect('/login')
     
